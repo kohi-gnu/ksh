@@ -109,7 +109,7 @@ internal_warningf(const char *fmt, ...)
 }
 
 /* Warn and unwind when something that shouldn't happen does */
-__dead void
+__attribute__((__noreturn__)) void
 internal_errorf(const char *fmt, ...)
 {
 	va_list va;

@@ -8,8 +8,10 @@
 #include <errno.h>
 #include <libgen.h>
 #include <stdio.h>
-#include <string.h>
+#include <time.h>
 #include <unistd.h>
+
+#include <bsd/string.h>
 
 #include "sh.h"
 

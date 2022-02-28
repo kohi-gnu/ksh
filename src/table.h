@@ -5,6 +5,8 @@
 /*
  * generic hashed associative table for commands and variables.
  */
+#ifndef KSH_TABLE_H
+# define KSH_TABLE_H 1
 
 struct table {
 	Area   *areap;		/* area to allocate entries */
@@ -191,3 +193,5 @@ void		ktdelete(struct tbl *);
 void		ktwalk(struct tstate *, struct table *);
 struct tbl *	ktnext(struct tstate *);
 struct tbl **	ktsort(struct table *);
+
+#endif /* !KSH_TABLE_H */

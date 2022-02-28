@@ -3,6 +3,8 @@
 /*
  * Expanding strings
  */
+#ifndef KSH_EXPAND_H
+# define KSH_EXPAND_H 1
 
 #define X_EXTRA		8	/* this many extra bytes in X string */
 
@@ -104,3 +106,5 @@ typedef struct XPtrV {
 					 sizeof(void *), ATEMP)
 
 #define	XPfree(x)	afree((x).beg, ATEMP)
+
+#endif /* !KSH_EXPAND_H */

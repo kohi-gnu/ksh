@@ -1,20 +1,21 @@
 /*	$OpenBSD: var.c,v 1.72 2021/03/05 15:22:03 zhuk Exp $	*/
 
 #include <sys/stat.h>
-#include <sys/time.h>
 
 #include <ctype.h>
 #include <errno.h>
 #include <inttypes.h>
 #include <limits.h>
-#include <stdlib.h>
-#include <string.h>
 #include <time.h>
 #include <unistd.h>
 #ifndef SMALL
 # include <term.h>
 # include <curses.h>
 #endif
+
+#include <bsd/sys/time.h>
+#include <bsd/stdlib.h>
+#include <bsd/string.h>
 
 #include "sh.h"
 
@@ -1042,7 +1043,7 @@ setspec(struct tbl *vp)
 		break;
 	case V_RANDOM:
 		vp->flag &= ~SPECIAL;
-		srand_deterministic((unsigned int)intval(vp));
+		srand((unsigned int)intval(vp));
 		vp->flag |= SPECIAL;
 		break;
 	case V_SECONDS:

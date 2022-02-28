@@ -1,5 +1,6 @@
 /*	$OpenBSD: tree.h,v 1.12 2015/10/15 22:53:50 mmcc Exp $	*/
-
+#ifndef KSH_TREE_H
+# define KSH_TREE_H 1
 /*
  * command trees for compile/execute
  */
@@ -143,3 +144,5 @@ char *	wdcopy(const char *, Area *);
 char *	wdscan(const char *, int);
 char *	wdstrip(const char *);
 void	tfree(struct op *, Area *);
+
+#endif /* !KSH_TREE_H */

@@ -7,6 +7,9 @@
 /*
  * POSIX character class support for fnmatch() and glob().
  */
+#ifndef KSH_CHARCLASS_H
+# define KSH_CHARCLASS_H 1
+
 static const struct cclass {
 	const char *name;
 	int (*isctype)(int);
@@ -27,3 +30,5 @@ static const struct cclass {
 };
 
 #define NCCLASSES	(sizeof(cclasses) / sizeof(cclasses[0]) - 1)
+
+#endif /* !KSH_CHARCLASS_H */

@@ -5,6 +5,8 @@
  */
 
 /* $From: sh.h,v 1.2 1994/05/19 18:32:40 michael Exp michael $ */
+#ifndef KSH_SH_H
+# define KSH_SH_H 1
 
 #include "config.h"	/* system and option configuration info */
 
@@ -16,6 +18,7 @@
 #include <stddef.h>
 #include <signal.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 /* end of common headers */
 
@@ -604,3 +607,5 @@ int	array_ref_len(const char *);
 char *	arrayname(const char *);
 void    set_array(const char *, int, char **);
 /* vi.c: see edit.h */
+
+#endif /* KSH_SH_H */

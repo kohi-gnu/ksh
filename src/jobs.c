@@ -24,9 +24,10 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <limits.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
+
+#include <bsd/stdlib.h>
+#include <bsd/string.h>
 
 #include "sh.h"
 #include "tty.h"
@@ -149,7 +150,11 @@ static int		kill_job(Job *, int);
 void
 j_init(int mflagset)
 {
+#ifdef CHILD_MAX
 	child_max = CHILD_MAX; /* so syscon() isn't always being called */
+#else
+	child_max = sysconf(_SC_CHILD_MAX);
+#endif
 
 	sigemptyset(&sm_default);
 	sigprocmask(SIG_SETMASK, &sm_default, NULL);

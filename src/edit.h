@@ -13,8 +13,10 @@
  *      $From: edit.h,v 1.2 1994/05/19 18:32:40 michael Exp michael $
  *
  */
+#ifndef KSH_EDIT_H
+# define KSH_EDIT_H
 
-#define	BEL		0x07
+# define	BEL		0x07
 
 /* tty driver characters we are interested in */
 typedef struct {
@@ -54,3 +56,5 @@ void	x_init_emacs(void);
 void	x_emacs_keys(X_chars *);
 /* vi.c */
 int	x_vi(char *, size_t);
+
+#endif /* !KSH_EDIT_H */

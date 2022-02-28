@@ -11,6 +11,9 @@
 	last edit:	30-Jul-1987	D A Gwyn
 */
 
+#ifndef KSH_TTY_H
+# define KSH_TTY_H 1
+
 #include <termios.h>
 
 extern int		tty_fd;		/* dup'd tty file descriptor */
@@ -19,3 +22,5 @@ extern struct termios	tty_state;	/* saved tty state */
 
 extern void	tty_init(int);
 extern void	tty_close(void);
+
+#endif /* !KSH_TTY_H */

@@ -13,11 +13,12 @@
 
 #include <ctype.h>
 #include <stdlib.h>
-#include <string.h>
 #ifndef SMALL
 # include <term.h>
 # include <curses.h>
 #endif
+
+#include <bsd/string.h>
 
 #include "sh.h"
 #include "edit.h"

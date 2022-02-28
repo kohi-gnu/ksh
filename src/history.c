@@ -13,14 +13,17 @@
  */
 
 #include <sys/stat.h>
+#include <sys/file.h>
 
 #include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include <unistd.h>
-#include <vis.h>
+
+#include <bsd/sys/time.h>
+#include <bsd/string.h>
+#include <bsd/vis.h>
 
 #include "sh.h"
 
@@ -724,8 +727,12 @@ history_open(void)
 	struct stat	sb;
 	int		fd, fddup;
 
-	if ((fd = open(hname, O_RDWR | O_CREAT | O_EXLOCK, 0600)) == -1)
+	if ((fd = open(hname, O_RDWR | O_CREAT, 0600)) == -1)
 		return NULL;
+	if (flock(fd, LOCK_EX) == -1) {
+		close(fd);
+		return NULL;
+	}
 	if (fstat(fd, &sb) == -1 || sb.st_uid != getuid()) {
 		close(fd);
 		return NULL;

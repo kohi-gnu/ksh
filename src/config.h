@@ -8,8 +8,8 @@
  * or guarantee of any kind (i.e., at your own risk).
  */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef KSH_CONFIG_H
+#define KSH_CONFIG_H
 
 /* Strict POSIX behaviour? */
 /* #undef POSIXLY_CORRECT */
@@ -25,4 +25,4 @@
 # error "Define either EMACS or VI."
 #endif
 
-#endif /* CONFIG_H */
+#endif /* KSH_CONFIG_H */

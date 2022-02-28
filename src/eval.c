@@ -11,8 +11,9 @@
 #include <fcntl.h>
 #include <pwd.h>
 #include <stdio.h>
-#include <string.h>
 #include <unistd.h>
+
+#include <bsd/string.h>
 
 #include "sh.h"
 

@@ -12,8 +12,9 @@
 #include <pwd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+
+#include <bsd/string.h>
+#include <bsd/unistd.h>
 
 #include "sh.h"
 
@@ -108,7 +109,7 @@ static const char *initcoms [] = {
 	NULL
 };
 
-char username[_PW_NAME_LEN + 1];
+char username[LOGIN_NAME_MAX + 1];
 
 #define version_param  (initcoms[2])
 
@@ -146,7 +147,8 @@ main(int argc, char *argv[])
 
 	kshname = argv[0];
 
-	if (issetugid()) { /* could later drop privileges */
+/*
+	if (issetugid()) { /* could later drop privileges /
 		if (pledge("stdio rpath wpath cpath fattr flock getpw proc "
 		    "exec tty id", NULL) == -1) {
 			perror("pledge");
@@ -159,7 +161,7 @@ main(int argc, char *argv[])
 			exit(1);
 		}
 	}
-
+*/
 	ainit(&aperm);		/* initialize permanent Area */
 
 	/* set up base environment */

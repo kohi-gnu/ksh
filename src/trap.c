@@ -15,6 +15,77 @@ Trap sigtraps[NSIG + 1];
 
 static struct sigaction Sigact_ign, Sigact_trap;
 
+static const char *
+signame(int sig)
+{
+	switch (sig) {
+		case SIGHUP:
+			return "HUP";
+		case SIGINT:
+			return "INT";
+		case SIGQUIT:
+			return "QUIT";
+		case SIGILL:
+			return "ILL";
+		case SIGTRAP:
+			return "TRAP";
+		case SIGABRT:
+			return "ABRT";
+		case SIGBUS:
+			return "BUS";
+		case SIGFPE:
+			return "FPE";
+		case SIGKILL:
+			return "KILL";
+		case SIGSEGV:
+			return "SEGV";
+		case SIGPIPE:
+			return "PIPE";
+		case SIGALRM:
+			return "ALRM";
+		case SIGTERM:
+			return "TERM";
+		case SIGUSR1:
+			return "USR1";
+		case SIGUSR2:
+			return "USR2";
+		case SIGSTKFLT:
+			return "STKFLT";
+		case SIGCHLD:
+			return "CHLD";
+		case SIGCONT:
+			return "CONT";
+		case SIGSTOP:
+			return "STOP";
+		case SIGTSTP:
+			return "TSTP";
+		case SIGTTIN:
+			return "TTIN";
+		case SIGTTOU:
+			return "TTOU";
+		case SIGURG:
+			return "URG";
+		case SIGXCPU:
+			return "XCPU";
+		case SIGXFSZ:
+			return "XFSZ";
+		case SIGVTALRM:
+			return "VTALRM";
+		case SIGPROF:
+			return "PROF";
+		case SIGWINCH:
+			return "WINCH";
+		case SIGIO:
+			return "IO";
+		case SIGPWR:
+			return "PWR";
+		case SIGSYS:
+			return "SYS";
+		default:
+			return "UNKNOWN";
+	}
+}
+
 void
 inittraps(void)
 {
@@ -27,7 +98,7 @@ inittraps(void)
 			sigtraps[i].name = "ERR";
 			sigtraps[i].mess = "Error handler";
 		} else {
-			sigtraps[i].name = sys_signame[i];
+			sigtraps[i].name = signame(i);
 			sigtraps[i].mess = sys_siglist[i];
 		}
 	}
