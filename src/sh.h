@@ -21,6 +21,18 @@
 #include <stdint.h>
 
 /* end of common headers */
+# ifndef PATH_MAX
+/* TODO: remove use of `PATH_MAX` macro */
+#  define PATH_MAX 4096
+# endif /* !PATH_MAX */
+
+# ifndef LOGIN_NAME_MAX
+/* TODO: remove use of `LOGIN_NAME_MAX` macro */
+#  define LOGIN_NAME_MAX 255
+# endif /* !LOGIN_NAME_MAX */
+/* compatibility macros */
+
+/* end of compatibility macros */
 
 #define	NELEM(a) (sizeof(a) / sizeof((a)[0]))
 #define	BIT(i)	(1<<(i))	/* define bit in flag */

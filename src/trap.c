@@ -49,8 +49,10 @@ signame(int sig)
 			return "USR1";
 		case SIGUSR2:
 			return "USR2";
+#ifdef SIGSTKFLT
 		case SIGSTKFLT:
 			return "STKFLT";
+#endif
 		case SIGCHLD:
 			return "CHLD";
 		case SIGCONT:
@@ -77,8 +79,10 @@ signame(int sig)
 			return "WINCH";
 		case SIGIO:
 			return "IO";
+#ifdef SIGPWR
 		case SIGPWR:
 			return "PWR";
+#endif
 		case SIGSYS:
 			return "SYS";
 		default:
