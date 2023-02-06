@@ -14,7 +14,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install build-essential
-        sudo apt-get install clang tcc libbsd-dev libncurses-dev
+        sudo apt-get install clang tcc libncurses-dev
 
     - name: Build with ${{ matrix.cc }}
-      run: CC=${{ matrix.cc }} make re
+      run: |
+        autoreconf -i -f
+        CC=${{ matrix.cc }} ./configure
+        make

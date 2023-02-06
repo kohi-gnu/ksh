@@ -14,7 +14,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <bsd/stdlib.h>
+#include <stdlib.h>
 
 #include "sh.h"
 #include "c_test.h"

@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <time.h>
 
-#include <bsd/sys/time.h>
+#include <sys/time.h>
 
 #include "sh.h"
 

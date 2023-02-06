@@ -11,7 +11,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <bsd/string.h>
+#include <string.h>
 
 #include "sh.h"
 

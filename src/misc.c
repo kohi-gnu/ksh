@@ -12,9 +12,8 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <grp.h>
-
-#include <bsd/string.h>
-#include <bsd/unistd.h>
+#include <unistd.h>
+#include <string.h>
 
 #include "sh.h"
 #include "charclass.h"

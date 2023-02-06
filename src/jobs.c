@@ -26,8 +26,8 @@
 #include <limits.h>
 #include <unistd.h>
 
-#include <bsd/stdlib.h>
-#include <bsd/string.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "sh.h"
 #include "tty.h"

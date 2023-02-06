@@ -1,0 +1,6 @@
+-I.
+-Isrc
+-Ibuild/
+-D_DEFAULT_SOURCE
+-std=gnu99
+-D_GNU_SOURCE

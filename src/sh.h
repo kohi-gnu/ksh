@@ -8,7 +8,7 @@
 #ifndef KSH_SH_H
 # define KSH_SH_H 1
 
-#include "config.h"	/* system and option configuration info */
+# include "compat/compat.h"
 
 /* Start of common headers */
 

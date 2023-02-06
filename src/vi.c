@@ -18,7 +18,7 @@
 # include <curses.h>
 #endif
 
-#include <bsd/string.h>
+#include <string.h>
 
 #include "sh.h"
 #include "edit.h"

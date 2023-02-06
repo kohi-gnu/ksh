@@ -14,16 +14,13 @@
 
 #include <sys/stat.h>
 #include <sys/file.h>
+#include <sys/time.h>
 
 #include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-
-#include <bsd/sys/time.h>
-#include <bsd/string.h>
-#include <bsd/vis.h>
 
 #include "sh.h"
 

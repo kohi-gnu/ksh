@@ -9,8 +9,8 @@
 
 #include <time.h>
 
-#include <bsd/sys/time.h>
-#include <bsd/string.h>
+#include <sys/time.h>
+#include <string.h>
 
 #include "config.h"
 #include "sh.h"
